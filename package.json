@@ -1,0 +1,20 @@
+{
+  "name": "jigsawlutioner-controller",
+  "version": "1.0.0",
+  "description": "Each controller offers an API that can be called by the master process.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/byWulf/jigsawlutioner-controller.git"
+  },
+  "author": "byWulf",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "brickpi3": "^0.9.8",
+    "express": "^4.17.1",
+    "onoff": "^6.0.1"
+  }
+}
