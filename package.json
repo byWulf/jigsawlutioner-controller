@@ -2,6 +2,7 @@
   "name": "jigsawlutioner-controller",
   "version": "1.0.0",
   "description": "Each controller offers an API that can be called by the master process.",
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/byWulf/jigsawlutioner-controller.git"

@@ -2,9 +2,9 @@
 
 Each controller offers an API that can be called by the master process.
 
-## Conveyour
+## Conveyor
 ```
-node conveyour.js
+node conveyor.js
 ```
 
 URL: http://jigsawlutioner-master:3000
