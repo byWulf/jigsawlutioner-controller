@@ -1,6 +1,8 @@
 import Conveyor from './src/Stations/Conveyor.js';
 import Scanner from './src/Stations/Scanner.js';
 import Rotator from './src/Stations/Rotator.js';
+import Sorter from './src/Stations/Sorter.js';
+import Picker from './src/Stations/Picker.js';
 
 import Express from 'express';
 
@@ -10,7 +12,9 @@ import Express from 'express';
     const stationClasses = [
         Conveyor,
         Scanner,
-        Rotator
+        Rotator,
+        Sorter,
+        Picker
     ];
 
     for (let i = 0; i < stationClasses.length; i++) {
