@@ -1,5 +1,5 @@
 import Conveyor from './src/Stations/Conveyor.js';
-import Scanner from './src/Stations/Scanner.js';
+//import Scanner from './src/Stations/Scanner.js';
 import Rotator from './src/Stations/Rotator.js';
 
 import Express from 'express';
@@ -9,7 +9,7 @@ import Express from 'express';
 
     const stationClasses = [
         Conveyor,
-        Scanner,
+        //Scanner,
         Rotator
     ];
 
