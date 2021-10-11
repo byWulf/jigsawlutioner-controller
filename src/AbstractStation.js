@@ -90,4 +90,12 @@ export default class AbstractStation {
     async getSensor(sensorParameters) {
         return new OnOff.Gpio(sensorParameters.pin, 'in', 'both', {debounceTimeout: 10});
     }
+
+    async resetMotor(motor, direction, power) {
+        for (let i = 0; i < 3; i++) {
+            await BrickPi.utils.resetMotorEncoder(motor.BP, motor.port, direction, 0, 10, 20000, power);
+        }
+        await motor.setPower(0);
+    }
+
 }

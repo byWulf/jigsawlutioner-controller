@@ -3,6 +3,8 @@ import Scanner from './src/Stations/Scanner.js';
 import Rotator from './src/Stations/Rotator.js';
 import Sorter from './src/Stations/Sorter.js';
 import Picker from './src/Stations/Picker.js';
+import Placer from './src/Stations/Placer.js';
+import Motor from './src/Stations/Motor.js';
 
 import Express from 'express';
 
@@ -14,7 +16,9 @@ import Express from 'express';
         Scanner,
         Rotator,
         Sorter,
-        Picker
+        Picker,
+        Placer,
+        Motor,
     ];
 
     for (let i = 0; i < stationClasses.length; i++) {

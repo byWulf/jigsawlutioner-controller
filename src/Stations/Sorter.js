@@ -41,13 +41,6 @@ export default class Sorter extends AbstractStation {
         });
     }
 
-    async resetMotor(motor, direction, power) {
-        for (let i = 0; i < 3; i++) {
-            await BrickPi.utils.resetMotorEncoder(motor.BP, motor.port, BrickPi.utils.RESET_MOTOR_LIMIT.FORWARD_LIMIT, 0, 10, 20000, power);
-        }
-        await motor.setPower(0);
-    }
-
     async movePieceToCliff(moveMotor, pushMotor, offset) {
         const offsetToMiddle = 270;
         const cmPerTeeth = 3.2 / 10; //https://www.brickowl.com/catalog/lego-gear-rack-4-3743
