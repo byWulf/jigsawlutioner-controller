@@ -1,6 +1,7 @@
 import BrickPiManager from './BrickPiManager.js';
 import BrickPi from 'brickpi3';
 import OnOff from 'onoff';
+import Express from 'express';
 
 export default class Controller {
     app;
