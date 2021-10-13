@@ -3,10 +3,15 @@
 ## Create controller
 
 ```javascript
-import AbstractStation from 'jigsawlutioner-controller/AbstractStation.js';
 import Controller from 'jigsawlutioner-controller/Controller.js';
 
-Controller.start(class extends AbstractStations {
+const controller = new Controller(3000);
+
+controller.createEndpoint('foobar', async(parameters, resolve) => {
+    await sleep(parameters.sleep1);
     
+    resolve();
+    
+    await sleep(parameters.sleep2);
 });
 ```
