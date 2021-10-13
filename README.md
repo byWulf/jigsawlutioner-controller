@@ -1,14 +1,11 @@
 # jigsawlutioner-controller
 
-Each controller offers an API that can be called by the master process.
+## Create controller
 
-## Conveyor
+```javascript
+import Controller from 'jigsawlutioner-controller/Controller.js';
+
+Controller.start(class extends AbstractStations {
+    
+});
 ```
-node conveyor.js
-```
-
-URL: http://jigsawlutioner-master:3000
-### Endpoints
-#### /reset
-
-#### /move-to-next-plate
