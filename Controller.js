@@ -22,7 +22,7 @@ export default class Controller {
     createEndpoint(path, callback) {
         const url = '/' + path;
         this.app.get(url, async (request, response) => {
-            const thisRequestIndex = AbstractStation.requestIndex++;
+            const thisRequestIndex = this.requestIndex++;
             console.log('#' + thisRequestIndex + ' - Got request for ' + url + ' with parameters ',request.query);
 
             await this.aquireBlock();
