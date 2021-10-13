@@ -7,7 +7,7 @@ export default class Controller {
     app;
     blocked;
 
-    static requestIndex = 0;
+    requestIndex = 0;
 
     constructor(serverPort) {
         this.blocked = false;

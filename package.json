@@ -1,6 +1,6 @@
 {
   "name": "jigsawlutioner-controller",
-  "version": "2.1.2",
+  "version": "2.1.3",
   "description": "Helper bundle to allow controllers to easier get the module running",
   "type": "module",
   "repository": {
