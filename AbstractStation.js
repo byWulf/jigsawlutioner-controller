@@ -1,4 +1,4 @@
-import brickPiManager from './brickPiManager.js';
+import BrickPiManager from './BrickPiManager.js';
 import BrickPi from 'brickpi3';
 import OnOff from 'onoff';
 
@@ -75,7 +75,7 @@ export default class AbstractStation {
      * @return {Promise<Motor>}
      */
     async getMotor(motorParameters) {
-        const BP = await brickPiManager.getBrickPi(motorParameters.address);
+        const BP = await BrickPiManager.getBrickPi(motorParameters.address);
 
         return BrickPi.utils.getMotor(BP, BP['PORT_' + motorParameters.port]);
     }
