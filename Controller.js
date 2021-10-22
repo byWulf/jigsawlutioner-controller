@@ -28,15 +28,22 @@ export default class Controller {
             await this.aquireBlock();
 
             let ended = false;
-            await callback(request.query, (responseContent, responseType) => {
-                if (typeof responseType !== 'undefined') {
-                    response.contentType(responseType);
-                }
-                response.end(responseContent);
-                ended = true;
+            try {
+                await callback(request.query, (responseContent, responseType) => {
+                    if (typeof responseType !== 'undefined') {
+                        response.contentType(responseType);
+                    }
+                    response.end(responseContent);
+                    ended = true;
 
-                console.log('#' + thisRequestIndex + ' - Sent response.');
-            });
+                    console.log('#' + thisRequestIndex + ' - Sent response.');
+                });
+            } catch (error) {
+                response.status(500);
+                response.send(error.message);
+
+                console.log('#' + thisRequestIndex + ' - Request failed: ', error);
+            }
 
             if (!ended) {
                 response.end();
