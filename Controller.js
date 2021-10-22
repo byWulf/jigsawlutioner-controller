@@ -83,7 +83,13 @@ export default class Controller {
     /**
      * @return {Promise<Motor>}
      */
-    async getMotor(motorParameters) {
+    async getMotor(parameters, motorName) {
+        const motorParameters = parameters[motorName];
+
+        if (typeof motorParameters === 'undefined' || typeof motorParameters.port === 'undefined') {
+            throw new Error('Parameter "' + motorName + '[port]" was missing from the call.');
+        }
+
         const BP = await BrickPiManager.getBrickPi(motorParameters.address);
 
         return BrickPi.utils.getMotor(BP, BP['PORT_' + motorParameters.port]);
@@ -92,7 +98,13 @@ export default class Controller {
     /**
      * @returns {Promise<Gpio>}
      */
-    async getSensor(sensorParameters) {
+    async getSensor(parameters, sensorName) {
+        const sensorParameters = parameters[sensorName];
+
+        if (typeof sensorParameters === 'undefined' || typeof sensorParameters.pin === 'undefined') {
+            throw new Error('Parameter "' + sensorName + '[pin]" was missing from the call.');
+        }
+
         return new OnOff.Gpio(sensorParameters.pin, 'in', 'both', {debounceTimeout: 10});
     }
 
