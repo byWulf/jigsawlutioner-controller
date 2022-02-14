@@ -108,6 +108,19 @@ export default class Controller {
         return new OnOff.Gpio(sensorParameters.pin, 'in', 'both', {debounceTimeout: 10});
     }
 
+    /**
+     * @returns {Promise<Gpio>}
+     */
+    async getOutputPin(parameters, outputName) {
+        const sensorParameters = parameters[outputName];
+
+        if (typeof sensorParameters === 'undefined' || typeof sensorParameters.pin === 'undefined') {
+            throw new Error('Parameter "' + outputName + '[pin]" was missing from the call.');
+        }
+
+        return new OnOff.Gpio(sensorParameters.pin, 'out',);
+    }
+
     async resetMotor(motor, direction, power) {
         for (let i = 0; i < 3; i++) {
             await BrickPi.utils.resetMotorEncoder(motor.BP, motor.port, direction, 0, 10, 20000, power);
