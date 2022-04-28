@@ -19,7 +19,7 @@ export default class Controller {
         });
 
         this.app.get('/up', (request, response) => {
-            response.status(201);
+            response.status(204);
             response.end();
         });
     }
