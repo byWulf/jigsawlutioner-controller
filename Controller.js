@@ -17,6 +17,11 @@ export default class Controller {
         this.app.listen(serverPort, () => {
             console.log(`Listening at http://localhost:${serverPort}`)
         });
+
+        this.app.get('/up', (request, response) => {
+            response.status(201);
+            response.end();
+        });
     }
 
     createEndpoint(path, callback) {
